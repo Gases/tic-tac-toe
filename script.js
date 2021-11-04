@@ -36,6 +36,8 @@ const displayController = (() => {
         } else if (gameBoard.winningCombinations.some(combo => combo.every(item => arrayO.includes(item)))) {
             playerTurn.textContent = `PLAYER 2 WINS`;
             gameBoard.squares.forEach(square => square.textContent === "" ? square.textContent = " " : '');
+        } else if (gameBoard.board.every(element => element !== "")) {
+            playerTurn.textContent = `IT'S A DRAW`;
         }
     }
 
